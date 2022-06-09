@@ -15,5 +15,9 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "scripts": {
+    "build": "yarn preconstruct build",
+    "release": "yarn changset publish"
   }
 }
