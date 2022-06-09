@@ -1,7 +1,7 @@
 # @jeffery-hsieh/components
 
-## 2.0.0
+## 1.0.1
 
-### Major Changes
+### Patch Changes
 
-- Move button component to saperate file
+- Add Alert component
