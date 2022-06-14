@@ -1,6 +1,6 @@
 {
   "name": "@jeffery-hsieh/components",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "dist/jeffery-hsieh-components.cjs.js",
   "module": "dist/jeffery-hsieh-components.esm.js",
   "license": "MIT",
