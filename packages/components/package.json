@@ -14,5 +14,8 @@
     "type": "git",
     "url": "https://github.com/Jeffery-Hsieh/changeset-test.git",
     "directory": "packages/components"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.17.12"
   }
 }
