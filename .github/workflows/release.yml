@@ -49,6 +49,13 @@ jobs:
         with:
           node-version: 14.x
           registry-url: https://npm.pkg.github.com/
-      - run: yarn release
+      
+      - name: Create Release Pull Request
+        uses: changesets/action@v1
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        # You can do something when a publish should happen.
+        run: yarn publish
