@@ -38,6 +38,7 @@ jobs:
       - name: Configure github
         run: |
           cat << EOF > "$HOME/.npmrc"
+            @jeffery-hsieh:registry=https://npm.pkg.github.com
             //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
           EOF
         env:
