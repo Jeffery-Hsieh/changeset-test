@@ -9,6 +9,9 @@ jobs:
   build:
     name: Build package
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: read
     steps:
       - name: Get Yarn cache path
         id: yarn-cache
@@ -29,6 +32,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile --ignore-engines
         env:
@@ -37,17 +41,6 @@ jobs:
       - name: Build packages
         run: yarn build
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14.x
       - name: Create release Pull Request or publish to NPM
         id: changesets
         uses: changesets/action@v1
