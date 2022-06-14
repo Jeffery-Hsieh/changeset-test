@@ -18,6 +18,6 @@
   },
   "scripts": {
     "build": "yarn preconstruct build",
-    "release": "yarn changset publish"
+    "release": "yarn changeset publish"
   }
 }
